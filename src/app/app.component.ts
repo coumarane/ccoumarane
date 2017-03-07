@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+
+  categories: any;
+  constructor() { 
+    this.categories = ["Profile", "Work experience", "Education"];
+  }
 }
