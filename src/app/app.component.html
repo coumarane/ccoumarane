@@ -1,6 +1,49 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container-toolbar">
+  <md-toolbar color="primary">
+      <span>Coumarane COUPPANE | Developer</span>
+      <span class="spacer"></span>
+      <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon>more_vert</md-icon>
+      </button>
+      <md-menu #menu="mdMenu">
+        <button md-menu-item>
+          <md-icon>fingerprint</md-icon>
+          <span>Login</span>
+        </button>
+        <button md-menu-item disabled>
+          <md-icon>announcement</md-icon>
+          <span>Issues</span>
+        </button>
+        <button md-menu-item>
+          <md-icon>notifications_off</md-icon>
+          <span>Disable alerts</span>
+        </button>
+      </md-menu>
+
+      <div>
+        <img class="my-pic" src="../../assets/images/coupc.jpg">
+      </div>
+  </md-toolbar>
+</div>
+
+<app-nav></app-nav>
 
 
-<app-whoami></app-whoami>
+<!--<md-tab-group [selectedIndex]="selectedIndex" (selectedIndexChange)="selectedIndexChange($event)">
+    <div *ngFor="let cat of categories; let i=index">
+        <md-tab label="{{cat.name}}">-->
+          <!--<div *ngIf="cat.name == 'Home'">
+            home
+          </div>-->
+      <!--  </md-tab>
+    </div>
+</md-tab-group>-->
+
+
+
+
+
+<router-outlet></router-outlet>
+
+
+<app-footer></app-footer>
