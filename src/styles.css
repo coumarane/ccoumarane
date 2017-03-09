@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /**@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';*/
+<<<<<<< HEAD
 /**@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';*/
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
@@ -30,6 +31,9 @@ html {
     height: 30px;
     border-radius: 50%;
 }
+=======
+@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+>>>>>>> 4774ede40661aeb8582063c19184276fffa185ae
 
 .spacer {
     -webkit-box-flex: 1;

@@ -13,6 +13,12 @@ import 'hammerjs';
 import { RouterModule, Routes } from '@angular/router';
 
 
+import { MaterialModule } from '@angular/material';
+import 'hammerjs';
+
+import { RouterModule, Routes } from '@angular/router';
+
+
 import { AppComponent } from './app.component';
 import { WhoamiComponent } from './whoami/whoami.component';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
@@ -43,16 +49,34 @@ const appRoutes: Routes = [
   }
 ];
 
+const appRoutes: Routes = [
+  {
+    path: 'profile', component: WhoamiComponent
+  },
+  { path: '',
+    redirectTo: '/',
+    pathMatch: 'full'
+  },
+];
+
 @NgModule({
   declarations: [
     AppComponent
+<<<<<<< HEAD
     , WhoamiComponent, WorkExperienceComponent, EducationComponent, ContactComponent, HomeComponent, NavComponent, FooterComponent
+=======
+    , WhoamiComponent
+>>>>>>> 4774ede40661aeb8582063c19184276fffa185ae
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+<<<<<<< HEAD
     //AngularFireModule.initializeApp(firebaseConfig),
+=======
+    AngularFireModule.initializeApp(firebaseConfig),
+>>>>>>> 4774ede40661aeb8582063c19184276fffa185ae
     MaterialModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],

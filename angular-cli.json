@@ -19,6 +19,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
+<<<<<<< HEAD
         "./assets/custom-theme.scss",
         "../node_modules/bootstrap/dist/css/bootstrap.css",
         "../node_modules/font-awesome/css/font-awesome.css"
@@ -27,6 +28,12 @@
         "../node_modules/jquery/dist/jquery.js",
         "../node_modules/tether/dist/js/tether.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js"
+=======
+        "./assets/custom-theme.scss"
+      ],
+      "scripts": [
+        
+>>>>>>> 4774ede40661aeb8582063c19184276fffa185ae
       ],
       "environments": {
         "source": "environments/environment.ts",
