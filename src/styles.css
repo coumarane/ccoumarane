@@ -11,6 +11,24 @@ html {
     min-height: 100%;
 }
 
+body {
+  margin-bottom: 60px;
+}
+/*
+body > .container {
+    padding: 60px 15px 0;
+}*/
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
 .starter-template {
     padding: 3rem 1.5rem;
     text-align: center;

@@ -1,18 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
-//import * as firebase from 'firebase';
-import { AngularFireModule } from 'angularfire2/index';
-//import { firebaseConfig } from '../environments/firebase.config';
-
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
-
-import { RouterModule, Routes } from '@angular/router';
-
-
+import { routes } from './app.router';
 
 import { AppComponent } from './app.component';
 import { WhoamiComponent } from './whoami/whoami.component';
@@ -22,40 +14,21 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
+import { TechnicalSkillComponent } from './technical-skill/technical-skill.component';
 
-const appRoutes: Routes = [
-  { 
-    path: '',
-    component: HomeComponent,
-    //redirectTo: '/',
-    //pathMatch: 'full'
-  },
-  {
-    path: 'profile', component: WhoamiComponent
-  },
-  {
-    path: 'work-experience', component: WorkExperienceComponent
-  },
-  {
-    path: 'education', component: EducationComponent
-  },
-  {
-    path: 'contact', component: ContactComponent
-  }
-];
 
 @NgModule({
   declarations: [
     AppComponent
     , WhoamiComponent, WorkExperienceComponent, EducationComponent, ContactComponent, HomeComponent, NavComponent, FooterComponent
-    , WhoamiComponent
+    , WhoamiComponent, TechnicalSkillComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    routes
   ],
   providers: [],
   bootstrap: [AppComponent]

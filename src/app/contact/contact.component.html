@@ -1,3 +1,86 @@
-<p>
-  contact works!
-</p>
+
+<div class="container container-contact">
+  <!-- First row -->
+  <div class="row">
+
+    <div class="col-xs-12 col-md-12">
+      <!--<h1>Contact</h1>-->
+      <md-card class="demo-card demo-basic">
+        <md-toolbar color="#369">Contact</md-toolbar>
+        <md-card-content>
+          <form class="contact-form" > <!--[formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)"-->
+            <table class="contact-full-width" cellspacing="0">
+              <tr>
+                <td>
+                  <md-input-container class="contact-full-width">
+                    <input mdInput placeholder="First name" id="firstName" name="firstName" required>
+                    <!--<small [hidden]="myForm.controls.firstName.valid || (myForm.controls.firstName.pristine && !submitted)">
+                        Name is required (minimum 5 characters).
+                    </small>-->
+                  </md-input-container>
+                </td>
+                <td>
+                  <md-input-container class="contact-full-width">
+                    <input mdInput placeholder="Last Name" id="lastName" name="lastName" required>
+                  </md-input-container>
+                </td>
+                <td>
+                  <md-input-container class="contact-full-width">
+                    <input mdInput placeholder="Email" id="email" name="email" required>
+                  </md-input-container>
+                </td>
+              </tr>
+            </table>
+
+            <p>
+              
+                <md-input-container class="contact-full-width">
+                  <textarea mdInput placeholder="Address"></textarea>
+                </md-input-container>
+                <md-input-container class="contact-full-width">
+                  <textarea mdInput placeholder="Address 2"></textarea>
+                </md-input-container>
+              
+            </p>
+
+            
+              <table class="contact-full-width" cellspacing="0">
+                <tr>
+                  <td>
+                    <md-input-container class="contact-full-width">
+                      <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="">
+                    </md-input-container>
+                  </td>
+                  <td>
+                    <md-input-container class="contact-full-width">
+                    <input mdInput placeholder="City">
+                    </md-input-container>
+                  </td>
+                  <td>
+                    <md-input-container class="contact-full-width">
+                      <input mdInput placeholder="Country">
+                    </md-input-container>
+                  </td>
+                </tr>
+              </table>
+            
+
+             <p>
+              <md-input-container class="contact-full-width">
+                <textarea mdInput #message placeholder="Message"></textarea>
+                <md-hint align="end">{{message.value.length}} / 255</md-hint>
+              </md-input-container>
+            </p>
+
+            <div class="contact-button-row">
+              <button type="submit">Submit</button><br>
+              <a md-raised-button routerLink=".">Send</a>
+            </div>
+
+          </form>
+        </md-card-content>
+      </md-card>
+
+    </div>
+  </div>
+</div>
