@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="container-toolbar">
   <md-toolbar color="primary">
       <span>Coumarane COUPPANE | Developer</span>
@@ -48,51 +48,4 @@
 
 
 <app-footer></app-footer>
-=======
-<md-toolbar color="primary">
-    <span>Coumarane COUPPANE</span>
-    <span class="spacer"></span>
-    <button md-icon-button [mdMenuTriggerFor]="menu">
-      <md-icon>more_vert</md-icon>
-    </button>
-    <md-menu #menu="mdMenu">
-      <button md-menu-item>
-        <md-icon>fingerprint</md-icon>
-        <span>Login</span>
-      </button>
-      <button md-menu-item disabled>
-        <md-icon>announcement</md-icon>
-        <span>Issues</span>
-      </button>
-      <button md-menu-item>
-        <md-icon>notifications_off</md-icon>
-        <span>Disable alerts</span>
-      </button>
-    </md-menu>
-</md-toolbar>
 
-<md-tab-group>
-  <md-tab label="Profile" (click)="showAlert()">
-
-  </md-tab>
-  <md-tab label="Work experience">
-    
-  </md-tab>
-
-  <md-tab label="Education">
-    
-  </md-tab>
-</md-tab-group>
-
-
-
-<md-sidenav>
-  <h3 md-subheader>categories</h3>
-  <md-list-item *ngFor="let cat of categories">
-    <p md-line> <a routerLink="/profile" routerLinkActive="active">{{cat}}</a></p>
-  </md-list-item>
-</md-sidenav>
-
-
-<router-outlet></router-outlet>
->>>>>>> 4774ede40661aeb8582063c19184276fffa185ae

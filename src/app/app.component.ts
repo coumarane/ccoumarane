@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 })
 
 export class AppComponent {
-<<<<<<< HEAD
 
   categories: any;
   selectedIndex: number = 0;
@@ -52,13 +51,4 @@ export class AppComponent {
     //console.log([this.categories[event].url]);
     this.router.navigate([this.categories[this.selectedIndex].url]);
   }
-
-=======
-  title = 'app works!';
-
-  categories: any;
-  constructor() { 
-    this.categories = ["Profile", "Work experience", "Education"];
-  }
->>>>>>> 4774ede40661aeb8582063c19184276fffa185ae
 }

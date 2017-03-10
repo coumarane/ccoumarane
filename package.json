@@ -26,13 +26,9 @@
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "firebase": "^3.7.0",
-<<<<<<< HEAD
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
     "ng2-bootstrap": "^1.4.0",
-=======
-    "hammerjs": "^2.0.8",
->>>>>>> 4774ede40661aeb8582063c19184276fffa185ae
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.7.2"
