@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 import { Contact } from '../../shared/models/contact';
 
@@ -9,24 +9,23 @@ import { Contact } from '../../shared/models/contact';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  public myForm: FormGroup;
+  public contactForm: FormGroup;
   public submitted: boolean;
   public events: any[] = [];
 
-  constructor(/*private _fb: FormBuilder*/) { }
+  contact: Contact;
 
-  ngOnInit() {
-    // this.myForm = this._fb.group({
-    //   firstName: ['', [<any>Validators.required, <any>Validators.minLength(5)]],
-    //   address: this._fb.group({
-    //         address1: new FormControl('', <any>Validators.required),
-    //         postCode: new FormControl('8000')
-    //     })
-    // });
+  constructor(private _fb: FormBuilder) { 
   }
 
-  save(model: Contact, isValid: boolean) {
+  ngOnInit() {
+    this.contactForm = this._fb.group({
+      firstName: ['', [<any>Validators.required, <any>Validators.minLength(5)]],
+    });
+  }
+
+  save(model: Contact) {
     this.submitted = true;
-    console.log(model, isValid);
+    console.log(model);
   }
 }

@@ -20,12 +20,14 @@ import { TechnicalSkillComponent } from './technical-skill/technical-skill.compo
 @NgModule({
   declarations: [
     AppComponent
-    , WhoamiComponent, WorkExperienceComponent, EducationComponent, ContactComponent, HomeComponent, NavComponent, FooterComponent
+    , WhoamiComponent, WorkExperienceComponent
+    , EducationComponent, ContactComponent
+    , HomeComponent, NavComponent, FooterComponent
     , WhoamiComponent, TechnicalSkillComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     MaterialModule.forRoot(),
     routes

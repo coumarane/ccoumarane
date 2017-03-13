@@ -1,34 +1,31 @@
-
-<div class="container-toolbar">
-  <md-toolbar color="primary">
-      <span>Coumarane COUPPANE | Developer</span>
-      <span class="spacer"></span>
-      <button md-icon-button [mdMenuTriggerFor]="menu">
-        <md-icon>more_vert</md-icon>
+<md-toolbar color="primary">
+    <span>Coumarane COUPPANE | Developer</span>
+    <span class="spacer"></span>
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>
+        <md-icon>fingerprint</md-icon>
+        <span>Login</span>
       </button>
-      <md-menu #menu="mdMenu">
-        <button md-menu-item>
-          <md-icon>fingerprint</md-icon>
-          <span>Login</span>
-        </button>
-        <button md-menu-item disabled>
-          <md-icon>announcement</md-icon>
-          <span>Issues</span>
-        </button>
-        <button md-menu-item>
-          <md-icon>notifications_off</md-icon>
-          <span>Disable alerts</span>
-        </button>
-      </md-menu>
+      <button md-menu-item disabled>
+        <md-icon>announcement</md-icon>
+        <span>Issues</span>
+      </button>
+      <button md-menu-item>
+        <md-icon>notifications_off</md-icon>
+        <span>Disable alerts</span>
+      </button>
+    </md-menu>
 
-      <div>
-        <img class="my-pic" src="../../assets/images/coupc.jpg">
-      </div>
-  </md-toolbar>
-</div>
+    <div>
+      <img class="my-pic" src="../../assets/images/coupc.jpg">
+    </div>
+</md-toolbar>
 
 <app-nav></app-nav>
-
+<div style="height: 10px;"></div>
 
 <!--<md-tab-group [selectedIndex]="selectedIndex" (selectedIndexChange)="selectedIndexChange($event)">
     <div *ngFor="let cat of categories; let i=index">
@@ -45,5 +42,6 @@
 <router-outlet></router-outlet>
 
 <!-- Footer -->
+<div style="height: 70px;"></div>
 <app-footer></app-footer>
 

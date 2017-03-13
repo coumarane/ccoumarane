@@ -1,86 +1,138 @@
-
-<div class="container container-contact">
+<div class="container">
   <!-- First row -->
   <div class="row">
 
     <div class="col-xs-12 col-md-12">
-      <!--<h1>Contact</h1>-->
-      <md-card class="demo-card demo-basic">
-        <md-toolbar color="#369">Contact</md-toolbar>
-        <md-card-content>
-          <form class="contact-form" > <!--[formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)"-->
-            <table class="contact-full-width" cellspacing="0">
-              <tr>
-                <td>
-                  <md-input-container class="contact-full-width">
-                    <input mdInput placeholder="First name" id="firstName" name="firstName" required>
-                    <!--<small [hidden]="myForm.controls.firstName.valid || (myForm.controls.firstName.pristine && !submitted)">
-                        Name is required (minimum 5 characters).
-                    </small>-->
-                  </md-input-container>
-                </td>
-                <td>
-                  <md-input-container class="contact-full-width">
-                    <input mdInput placeholder="Last Name" id="lastName" name="lastName" required>
-                  </md-input-container>
-                </td>
-                <td>
-                  <md-input-container class="contact-full-width">
-                    <input mdInput placeholder="Email" id="email" name="email" required>
-                  </md-input-container>
-                </td>
-              </tr>
-            </table>
+      <!-- Card -->
+      <article>
+        
+        <div class="card-block">
+          <h4 class="card-title">Contact</h4>
+          <div class="container">
+            <div class="row">
+              <!-- Contact Info -->
+              <div class="col col-md-5 col-sm-6 col-xs-12">
+                <div>
+                  <!-- info -->
+                  <ul class="" data-aos="fade" data-aos-delay="200" data-aos-offset="0">
+                    <li class="orange">
+                      <div>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>+33 6 45 35 60 89</span>
+                      </div>
+                    </li>
+                    <li class="blue">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                      <span>c.coumarane@gmail.com</span>
+                    </li>
+                    <li class="green">
+                      <i class="fa fa-globe" aria-hidden="true"></i>
+                      <span>http://www.coumarane.com</span>
+                    </li>
+                    <li class="gold">
+                      <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                      <span>Paris, France</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- ./Contact Info -->
+              <!-- Contact Form -->
+              <div class="col col-md-7 col-sm-6 col-xs-12">
+                <md-card class="demo-card demo-basic">
+                  <md-card-content>
+                    <form novalidate [formGroup]="contactForm" (ngSubmit)="save(contactForm)" class="contact-form" > <!--[formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)"-->
+                      <table class="contact-full-width" cellspacing="0">
+                        <tr>
+                          <td>
+                            <md-input-container class="contact-full-width">
+                              <input mdInput placeholder="First name" id="firstName" name="firstName" formControlName="firstName">
+                              <small *ngIf="!contactForm.controls.firstName.valid" class="text-danger">
+                                  Name is required (minimum 5 characters).
+                              </small>
+                            </md-input-container>
+                          </td>
+                          <td>
+                            <md-input-container class="contact-full-width">
+                              <input mdInput placeholder="Last Name" id="lastName" name="lastName">
+                            </md-input-container>
+                          </td>
+                          <td>
+                            <md-input-container class="contact-full-width">
+                              <input mdInput placeholder="Email" id="email" name="email">
+                            </md-input-container>
+                          </td>
+                        </tr>
+                      </table>
+                      
+                      <!--<div formGroupName="address">-->
+                        <p>
+                          <md-input-container class="contact-full-width">
+                            <textarea mdInput placeholder="Address"></textarea>
+                            <!--<small [hidden]="myForm.controls.addresses.controls[i].controls.address1.valid">
+                                Address is required
+                            </small>-->
+                          </md-input-container>
+                          <md-input-container class="contact-full-width">
+                            <textarea mdInput placeholder="Address 2"></textarea>
+                          </md-input-container>
+                        </p>
 
-            <p>
-              
-                <md-input-container class="contact-full-width">
-                  <textarea mdInput placeholder="Address"></textarea>
-                </md-input-container>
-                <md-input-container class="contact-full-width">
-                  <textarea mdInput placeholder="Address 2"></textarea>
-                </md-input-container>
-              
-            </p>
+                        
+                          <table class="contact-full-width" cellspacing="0">
+                            <tr>
+                              <td>
+                                <md-input-container class="contact-full-width">
+                                  <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="">
+                                </md-input-container>
+                              </td>
+                              <td>
+                                <md-input-container class="contact-full-width">
+                                <input mdInput placeholder="City">
+                                </md-input-container>
+                              </td>
+                              <td>
+                                <md-input-container class="contact-full-width">
+                                  <input mdInput placeholder="Country">
+                                </md-input-container>
+                              </td>
+                            </tr>
+                          </table>
+                      <!--</div>-->
 
-            
-              <table class="contact-full-width" cellspacing="0">
-                <tr>
-                  <td>
-                    <md-input-container class="contact-full-width">
-                      <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="">
-                    </md-input-container>
-                  </td>
-                  <td>
-                    <md-input-container class="contact-full-width">
-                    <input mdInput placeholder="City">
-                    </md-input-container>
-                  </td>
-                  <td>
-                    <md-input-container class="contact-full-width">
-                      <input mdInput placeholder="Country">
-                    </md-input-container>
-                  </td>
-                </tr>
-              </table>
-            
+                      <p>
+                        <md-input-container class="contact-full-width">
+                          <textarea mdInput #message placeholder="Message"></textarea>
+                          <md-hint align="end">{{message.value.length}} / 255</md-hint>
+                        </md-input-container>
+                      </p>
+                      
 
-             <p>
-              <md-input-container class="contact-full-width">
-                <textarea mdInput #message placeholder="Message"></textarea>
-                <md-hint align="end">{{message.value.length}} / 255</md-hint>
-              </md-input-container>
-            </p>
+                      <div class="g-recaptcha" data-sitekey="6LePyBgUAAAAAGkE6UfzR3hjzKloEGOk0da5S1zn"></div>
+                      <p>&nbsp;</p>
+                      <div class="contact-button-row">
+                        <button md-raised-button [disabled]="!contactForm.valid" type="submit">Send</button>
+                      </div>
 
-            <div class="contact-button-row">
-              <button type="submit">Submit</button><br>
-              <a md-raised-button routerLink=".">Send</a>
+                    </form>
+                  </md-card-content>
+                </md-card>
+              </div>
+              <!-- ./Contact Form -->
             </div>
 
-          </form>
-        </md-card-content>
-      </md-card>
-
+            <!-- Location MAP -->
+            <!--<div class="row">
+                <div class="col col-md-12 col-sm-12 col-xs-12">
+                    <div id="google-map" data-aos="zoom-in" data-aos-delay="0" data-aos-offset="0" class="aos-init aos-animate">
+                        
+                        
+                        <address class="text-center">Paris, France</address>
+                    </div>
+                </div>
+            </div>-->
+          </div>
+        </div>
+      </article>
     </div>
   </div>
-</div>
