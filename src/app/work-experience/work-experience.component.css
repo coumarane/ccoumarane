@@ -1,0 +1,122 @@
+.timeline {
+    list-style: none;
+    position: relative;
+    padding: 20px 0 20px;
+}
+
+.timeline:before {
+    position: absolute;
+    content: " ";
+    background-color: #d4d4d4; /*#3f51b5*/
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    left: 49.8%;
+    margin-left: -1.5px;
+}
+
+.timeline li {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.timeline li:before, .timeline li:after {
+    content: " ";
+    display: table;
+}
+
+.timeline li:after {
+  clear: both;
+}
+
+.timeline .time {
+    width: 150px;
+    background: rgb(194, 170, 155);;
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+    margin: 0 auto;
+    padding: 5px 0;
+    border-radius: 30% / 100%;
+    /*border: 2px solid orange;*/
+    /*border-top-right-radius: 25%;
+    border-top-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+    border-bottom-left-radius: 2%;*/
+    
+}
+
+.timeline .circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 25px;
+    left: 50%;
+    margin-left: -16px;
+    background: rgb(194, 170, 155);;
+    border: 1px solid #d4d4d4;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    z-index: 99999;
+}
+
+.timeline .panel {
+    position: relative;
+    font-size: 12px;
+    width: 40%;
+    background: #efefef;
+    padding: 0 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+.timeline .title {
+    font-size: 12px; 
+    color: orangered;
+    font-weight: bold;
+}
+
+.timeline .body {
+    font-size: 12px;
+    color: #000;
+}
+
+/*.timeline .read-more {
+    float: right;
+    padding: .8em 1em;
+    background: #acb7c0;
+    color: white;
+    border-radius: 0.25em;
+}*/
+
+.timeline .panel:before {
+    position: absolute;
+    top: 25px;
+    right: -15px;
+    /*border: 1px solid mediumvioletred;*/
+    border-top: 15px solid transparent;
+    border-left: 15px solid #efefef;
+    border-right: 0 solid #efefef;
+    border-bottom: 15px solid transparent;
+    content: " ";
+}
+
+.timeline li.timeline-inverted .panel {
+  float: right;
+}
+
+.timeline li.timeline-inverted .panel:before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}

@@ -1,4 +1,27 @@
-<div class="container">
+<div class="container" [hidden]="!isFormSubmit()">
+  <div class="row">
+
+    <div class="col-xs-12 col-md-12">
+      <!-- Card -->
+      <article class="card animated fadeInLeft">
+        
+        <div class="card-block">
+          <h4 class="card-title">About</h4>
+          <p class="card-text">
+          Your message has been sent.
+          </p>
+          <p class="card-text">
+          I will get in touch with you as soon as possible.
+          </p>
+
+          <a [routerLink]="['/']" class="btn btn-primary">Home</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<div class="container" [hidden]="isFormSubmit()">
   <!-- First row -->
   <div class="row">
 
@@ -41,40 +64,53 @@
               <div class="col col-md-7 col-sm-6 col-xs-12">
                 <md-card class="demo-card demo-basic">
                   <md-card-content>
-                    <form novalidate [formGroup]="contactForm" (ngSubmit)="save(contactForm)" class="contact-form" > <!--[formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)"-->
+                    <form novalidate [formGroup]="contactForm" (ngSubmit)="save(contactForm.value)" class="contact-form" > <!--[formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)"-->
                       <table class="contact-full-width" cellspacing="0">
                         <tr>
                           <td>
                             <md-input-container class="contact-full-width">
-                              <input mdInput placeholder="First name" id="firstName" name="firstName" formControlName="firstName">
-                              <small *ngIf="!contactForm.controls.firstName.valid" class="text-danger">
-                                  Name is required (minimum 5 characters).
-                              </small>
+                              <input mdInput placeholder="First name" id="first_name" name="first_name" formControlName="first_name">
+                              <!--<control-messages [control]="contactForm.controls.first_name"></control-messages>-->
+                              <!--<md-hint align="end" *ngIf="(contactForm.controls['first_name'].hasError('required') || contactForm.controls['first_name'].hasError('minlength') )&& contactForm.controls['first_name'].touched">
+                                <span val-message="required" class="alert-danger">Required (minimum 5 chars)</span>
+                              </md-hint>-->
+                              
                             </md-input-container>
+                            <app-form-validator [control]="contactForm.controls.first_name"></app-form-validator>
                           </td>
                           <td>
                             <md-input-container class="contact-full-width">
-                              <input mdInput placeholder="Last Name" id="lastName" name="lastName">
+                              <input mdInput placeholder="Last Name" id="last_name" name="last_name" formControlName="last_name">
+                              <!--<md-hint align="end" *ngIf="(contactForm.controls['last_name'].hasError('required') || contactForm.controls['last_name'].hasError('minlength') ) && contactForm.controls['last_name'].touched">
+                                <span val-message="required" class="alert-danger">Required (minimum 5 chars)</span>
+                              </md-hint>-->
+                              
                             </md-input-container>
+                            <app-form-validator [control]="contactForm.controls.last_name"></app-form-validator>
                           </td>
                           <td>
                             <md-input-container class="contact-full-width">
-                              <input mdInput placeholder="Email" id="email" name="email">
+                              <input mdInput placeholder="Email" id="email" name="email" formControlName="email">
+                              <!--<md-hint align="end" *ngIf="contactForm.controls['email'].hasError('required') && contactForm.controls['email'].touched">
+                                <span val-message="required" class="alert-danger">Required</span>
+                              </md-hint>-->
+                              
                             </md-input-container>
+                            <app-form-validator [control]="contactForm.controls.email"></app-form-validator>
                           </td>
                         </tr>
                       </table>
                       
-                      <!--<div formGroupName="address">-->
+                      <div formGroupName="address">
                         <p>
                           <md-input-container class="contact-full-width">
-                            <textarea mdInput placeholder="Address"></textarea>
+                            <textarea mdInput placeholder="Address" id="address1" name="address1" formControlName="address1"></textarea>
                             <!--<small [hidden]="myForm.controls.addresses.controls[i].controls.address1.valid">
                                 Address is required
                             </small>-->
                           </md-input-container>
                           <md-input-container class="contact-full-width">
-                            <textarea mdInput placeholder="Address 2"></textarea>
+                            <textarea mdInput placeholder="Address 2" id="address2" name="address2" formControlName="address2"></textarea>
                           </md-input-container>
                         </p>
 
@@ -83,35 +119,40 @@
                             <tr>
                               <td>
                                 <md-input-container class="contact-full-width">
-                                  <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="">
+                                  <input mdInput #postalCode maxlength="5" placeholder="Postal Code"  id="post_code" name="post_code" formControlName="post_code">
                                 </md-input-container>
                               </td>
                               <td>
                                 <md-input-container class="contact-full-width">
-                                <input mdInput placeholder="City">
+                                <input mdInput placeholder="City" id="city" name="city" formControlName="city">
                                 </md-input-container>
                               </td>
                               <td>
                                 <md-input-container class="contact-full-width">
-                                  <input mdInput placeholder="Country">
+                                  <input mdInput placeholder="Country" id="country" name="country" formControlName="country">
                                 </md-input-container>
                               </td>
                             </tr>
                           </table>
-                      <!--</div>-->
+                      </div>
 
                       <p>
                         <md-input-container class="contact-full-width">
-                          <textarea mdInput #message placeholder="Message"></textarea>
-                          <md-hint align="end">{{message.value.length}} / 255</md-hint>
+                          <textarea mdInput #message placeholder="Message" id="message" name="message" formControlName="message"></textarea>
+                          <md-hint align="end">
+                            {{message.value.length}} / 255
+                            <!--<md-icon>mode_edit</md-icon> -->
+                          </md-hint>
                         </md-input-container>
                       </p>
                       
+                      
+                      <!--<div class="g-recaptcha" data-sitekey="6LePyBgUAAAAAGkE6UfzR3hjzKloEGOk0da5S1zn"></div>-->
+                      <recaptcha (resolved)="resolved($event)" [siteKey]="captchaSiteKey"></recaptcha>
 
-                      <div class="g-recaptcha" data-sitekey="6LePyBgUAAAAAGkE6UfzR3hjzKloEGOk0da5S1zn"></div>
                       <p>&nbsp;</p>
                       <div class="contact-button-row">
-                        <button md-raised-button [disabled]="!contactForm.valid" type="submit">Send</button>
+                        <button md-raised-button [disabled]="!isFormValid()" type="submit">Send</button>
                       </div>
 
                     </form>

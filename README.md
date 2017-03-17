@@ -38,3 +38,7 @@ To publish project to Github, do the following :
 3. $ git add .
 4. $ git commit -m "A brief message"
 5. $ git push
+
+## Angular2 material
+
+Check here https://medium.com/@jeff.boothe/angular-cli-meets-webpack-7c9b1a1e1e89#.y7l2dnh1i

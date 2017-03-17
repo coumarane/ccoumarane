@@ -12,3 +12,91 @@
     padding-right: 15px;
     padding-left: 15px;
 }
+
+.share-bar {
+    float: right;
+}
+
+.share-bar ul {
+    list-style: none;
+    /*background: springgreen;*/
+    line-height: 45px;
+}
+
+.share-bar ul li {
+    display: table-cell;
+}
+
+.share-link-facebook {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 0 30px #3a579d inset;
+    -webkit-box-shadow: 0 0 0 30px #3a579d inset;
+    -moz-box-shadow: 0 0 0 30px #3a579d inset;
+}
+
+.share-link-linkedin {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 0 30px #3390e1 inset;
+    -webkit-box-shadow: 0 0 0 30px #3390e1 inset;
+    -moz-box-shadow: 0 0 0 30px #3390e1 inset;
+}
+
+.share-link-github {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 0 30px #000 inset;
+    -webkit-box-shadow: 0 0 0 30px #000 inset;
+    -moz-box-shadow: 0 0 0 30px #000 inset;
+}
+
+.share-link-envelope {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 0 30px orangered inset;
+    -webkit-box-shadow: 0 0 0 30px orangered inset;
+    -moz-box-shadow: 0 0 0 30px orangered inset;
+}
+
+/*.share-link-envelope:hover {
+    color: orangered;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid orangered;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 0 30px #fff inset;
+    -webkit-box-shadow: 0 0 0 30px #fff inset;
+    -moz-box-shadow: 0 0 0 30px #fff inset;
+    -webkit-transition: color 0.1s ease-out, box-shadow 0.1s ease-out;
+    transition: color 0.1s ease-out, box-shadow 0.1s ease-out;
+}*/

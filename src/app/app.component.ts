@@ -45,7 +45,7 @@ export class AppComponent {
       }
     ];
   }
-
+  
   selectedIndexChange(event: any) : void {
     this.selectedIndex = event;
     //console.log([this.categories[event].url]);

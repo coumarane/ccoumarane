@@ -1,6 +1,6 @@
 export interface Contact {
-    firstName: string;
-    lastName: string;
+    first_name: string;
+    last_name: string;
     email: string;
     address: Address;
     message: string;
@@ -9,7 +9,7 @@ export interface Contact {
 export interface Address {
     address1: string;
     address2: string;
-    postCode: string;
+    post_code: string;
     city: string;
     country: string;
 }
